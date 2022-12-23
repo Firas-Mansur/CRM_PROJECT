@@ -1,0 +1,28 @@
+<div class="bg-primary text-light p-5 mb-0">
+  <div class="text-center">
+    <h1 style="font-family: fantasy; color: rgb(255, 255, 255);">Customer relationship management</h1>
+    <h4>Hello {{ email }}</h4>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="logo"></div>
+    <a class="navbar-brand" routerLink="/home" style="font-family: fantasy; color: rgb(255, 255, 255);">MyCRM</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li>
+      <a class="nav-link" routerLink="/home" routerLinkActive="activeStyle"><i class="fa fa-home" aria-hidden="true"> </i>Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contacts" routerLinkActive="activeStyle"><i class="fa fa-phone" aria-hidden="true"></i> Contacts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/add-customer" routerLinkActive="activeStyle"><i class="fa fa-user-plus" aria-hidden="true"></i> Add Customer</a>
+      </ul>
+      <div class="d-flex flex-row-reverse bd-highlight">
+        <button class="btn btn-warning" (click)="logout()"><i class="fa fa-power-off" aria-hidden="true"></i> Logout</button>
+      </div>
+    </div>
+ 

@@ -1,0 +1,64 @@
+<div class="container col-8 mt-3">
+<form #updateCustomer = "ngForm"(ngSubmit)="updateTheCustomer()">
+    <h3>Edit Customer</h3>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" 
+        class="form-label">First Name</label>
+        <input
+        type="text" 
+        class="form-control" 
+        id="exampleFormControlInput1" 
+        placeholder="Enter First Name"
+        name="First Name"
+         [(ngModel)]="customer.FirstName"
+        #FirstName="ngModel"
+        required 
+        >
+
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+        <input 
+         class="form-control"
+         id="exampleFormControlInput1"
+         placeholder="Enter Last Name"
+        name="LastName"
+        [(ngModel)]="customer.LastName"
+        #LastName="ngModel"
+        required 
+
+         >
+
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
+        <input
+        type="text" 
+        class="form-control" 
+        id="exampleFormControlInput1" 
+        placeholder="Enter Phone Number"
+        name="phone"
+        [(ngModel)]="customer.phone"
+        #phone="ngModel"
+        required 
+
+        >
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        <input
+        type="text" 
+        class="form-control" 
+        id="exampleFormControlInput1"
+        placeholder="Enter Email"
+        name="email"
+        [(ngModel)]="customer.email"
+        #email="ngModel"
+        required 
+
+         >
+      </div>
+  <button class="btn btn-primary mb-3">Edit Customer</button>
+</form>
+</div>
+

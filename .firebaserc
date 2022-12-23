@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "company-crm-7fdc9": {
+      "hosting": {
+        "company-crm": [
+          "company-crm-7fdc9"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "company-crm-7fdc9"
+  }
+} 

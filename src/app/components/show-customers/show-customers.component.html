@@ -1,0 +1,68 @@
+   <div class="table vh-100">
+     <ng-container class="text-danger" *ngIf="customers.length else noCustomers">
+
+      <div>
+       <h1 style="margin-top: 10px; margin-bottom: 20px;">Search Customer by:</h1>
+
+       <div>
+        <span><i class="fa-solid fa-magnifying-glass"></i></span>
+         <input type="search" placeholder="Name" [(ngModel)]="FirstName"
+           style="padding: 6px; border: 2px solid black;font-size: 17px;">
+
+
+           <span><i class="fa-solid fa-magnifying-glass"></i></span>
+         <input type="search" placeholder="LastName" [(ngModel)]="LastName"
+           style="padding: 6px; border: 2px solid black;font-size: 17px;">
+
+             <span><i class="fa-solid fa-magnifying-glass"></i></span>
+         <input type="search" placeholder="Phone" [(ngModel)]="phone"
+           style="padding: 6px; border: 2px solid black;font-size: 17px;">
+       </div>
+      </div>
+       <ng-container
+         *ngIf="customers | filter:'FirstName': FirstName | filter: 'LastName' : LastName | filter: 'phone' : phone as customers">
+
+         <h1 style="margin-top:30px ; margin-bottom: 20px;">customers details:</h1>
+         <div class="container col-8 mt-0">
+           <table class="table table-striped"> 
+             <thead>
+               <tr class="bg-dark text-white">
+                 <th>No</th>
+                 <th>First Name</th>
+                 <th>Last Name</th>
+                 <th>Phone</th>
+                 <th>Email</th>
+                 <th>Details</th>
+                 <th>Edit</th>
+                 <th>Delete</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr *ngFor="let customer of customers; index as i">
+                 <td>{{i + 1}}</td>
+                 <td>{{customer.FirstName}}</td>
+                 <td>{{customer.LastName}}</td>
+                 <td>{{customer.phone}}</td>
+                 <td>{{customer.email}}</td>
+
+                 <td><a (click)="showCard(customer)"><i class="fa fa-eye" aria-hidden="true" style="cursor:pointer;"></i></a></td>
+
+                 <td><a (click)="updateCustomer(customer)"><i class="fa-solid fa-pen text-success"
+                       style="cursor:pointer ;"></i></a></td>
+                 <td>
+                   <a (click)="deleteCustomer(customer)"><i class="fa-solid fa-trash text-danger"
+                       style="cursor:pointer;"></i></a>
+                 </td>
+
+               </tr>
+             </tbody>
+           </table>
+         </div>
+
+       </ng-container>
+     </ng-container>
+
+     <ng-template #noCustomers>
+
+     </ng-template>
+   </div>
